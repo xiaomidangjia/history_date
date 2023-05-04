@@ -47,7 +47,7 @@ def keep_date():
 
     ins = ins.sort_values(by=['order_date'])
     ins = ins[['order_date','order_type','order_multi','order_value','order_id','order_price','order_win']]
-    ins.to_csv('history_date.csv',encoding='utf-8-sig',index=False)
+    ins.to_csv('量化机器人历史开单记录明细.csv',encoding='utf-8-sig',index=False)
     import telegram
     bot = telegram.Bot(token='6219784883:AAE3YXlXvxNArWJu-0qKpKlhm4KaTSHcqpw')
     bot.sendDocument(chat_id='-840309715', document=open('/root/history_date/量化机器人历史开单记录明细.csv', 'rb'))
@@ -56,6 +56,6 @@ def keep_date():
     return res
 
 if __name__ == '__main__':
-    app.run("0.0.0.0", port=80)
+    app.run("0.0.0.0", port=5080)
 
 
